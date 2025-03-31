@@ -1,0 +1,17 @@
+{
+  "name": "WepAPP-2023-Final-Project",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "install:all": "cd frontend && yarn install && cd ../backend && yarn install",
+    "start": "cd frontend && yarn start",
+    "server": "cd backend && yarn server",
+    "build": "cd frontend && yarn build",
+    "deploy": "cd backend && yarn deploy",
+    "install:prod": "cd frontend && yarn install --freeze-lockfile && cd ../backend && yarn install --freeze-lockfile"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.9.0"
+  }
+}

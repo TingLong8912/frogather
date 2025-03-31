@@ -1,0 +1,85 @@
+ /* Style of buttons */
+ .btn {
+    background-color: rgb(38, 44, 48);
+    border: none; 
+    color: rgb(87, 91, 94); 
+    padding: 12px 16px; 
+    font-size: 30px; 
+    font-weight: bold;
+    cursor: pointer; 
+    border-radius: 8px;
+    top: 5%;
+    left: 2%;
+    position: absolute;
+    transition: transform .2s;
+  }
+  
+.btn:hover {
+    Transform: scale(1.3);
+  } 
+
+/* Style of images */
+.ImgGrid {
+    top: 25%;
+    left: 10%;
+    position: absolute;
+}
+
+#cover {
+    width: 32vw;
+    height: 32vh;
+    margin: 0 auto;
+  }
+  
+  #cover > img {
+    float: left;
+    border: 2px solid rgb(92, 95, 85);
+    width: 42%;
+    margin: 1%;
+    box-shadow: 6px 6px 3px rgba(0, 0, 0, 0.3);
+    border-radius: 5%;
+  }
+
+/* Style of text */
+.SectionTitle {
+    top:5%;
+    left: 50%;
+    text-align: center;
+    position: absolute;
+    color: rgb(238,238,0);
+    line-height: 0;
+    font-family: "fantasy";
+}
+
+.SectionText {
+    top:25%;
+    left: 42%;
+    position: absolute;
+    text-align: justify;
+    background-color: rgba(255,255,255,0.03);
+    padding: 0% 2% 0% 2%;
+    border-radius: 30px;
+    width: 50%;
+    font-family: "fantasy";
+}
+
+.SectionBulletin {
+  left: 44%;
+  position: absolute;
+  padding: 5px;
+  margin: 2px;
+  border: none;
+  width: 45%;
+  border-radius: 10px;
+  background-color: rgba(177, 112, 112, 0.7);
+  line-height: 5px;
+  font-size: medium;
+  font-weight:bold;
+  letter-spacing: 0.1vw;
+  text-align: justify;
+  font-family: "fantasy";
+}
+
+.SectionBulletin a{
+  color:rgb(0, 0, 0)
+}

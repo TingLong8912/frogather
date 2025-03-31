@@ -1,0 +1,6 @@
+.App{
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.06) 0%, rgba(14, 81, 29, 0.09) 79.17%, rgba(20, 85, 62, 0.1) 100%), #FFFFFF,
+}
