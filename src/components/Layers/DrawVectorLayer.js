@@ -1,3 +1,4 @@
+import React from 'react';
 import { useContext, useEffect } from "react";
 import { message } from 'antd';
 import MapContext from "./../../hook/MapContext";
@@ -43,14 +44,16 @@ const DrawVectorLayer = ({ name, source, style, zIndex }) => {
 			type: "Point",
 		});
 		draw.on('drawend', function(evt) {
-			map?.removeInteraction(draw);
+			if (map) {
+				map.removeInteraction(draw);
+			}
 			var feature = evt.feature;
 			var coords = feature.getGeometry().getCoordinates();
 			setUserCoord(coords);
 			message.success("繪製成功，請回到表單填寫地點名稱")
 		}, this);
-		if (isDraw) {
-			map?.addInteraction(draw);
+		if (isDraw && map) {
+			map.addInteraction(draw);
 		}
 	};
 

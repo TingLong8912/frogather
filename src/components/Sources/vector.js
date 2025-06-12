@@ -1,3 +1,4 @@
+import React from 'react';
 import { Vector as VectorSource } from 'ol/source';
 
 function vector({ features }) {

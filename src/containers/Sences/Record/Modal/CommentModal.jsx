@@ -6,6 +6,7 @@ import { CommentItem } from 'components/CommentItem';
 import { createRecordComments, addCommentLikes } from './../../../../axios';
 import { UserImg } from 'components/UserImg';
 import { useAuth0 } from '@auth0/auth0-react';
+import React from 'react';
 
 const { Panel } = Collapse;
 

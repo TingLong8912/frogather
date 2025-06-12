@@ -1,3 +1,4 @@
+import React from 'react';
 import { Collapse, message } from "antd";
 import { StatusTag } from "./Tags";
 import { ActionButton } from "./ActionButton";

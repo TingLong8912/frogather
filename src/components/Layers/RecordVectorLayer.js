@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import MapContext from "../../hook/MapContext";
 import OLVectorLayer from "ol/layer/Vector";
 

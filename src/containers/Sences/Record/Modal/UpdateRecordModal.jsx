@@ -11,6 +11,7 @@ import styled from 'styled-components';
 import { ImageUpload } from 'components/ImageUpload';
 import { OptionCard } from 'components/OptionCard';
 import { useAuth0 } from '@auth0/auth0-react';
+import React from 'react';
 
 const coordTextStyle = {
   fontWeight: "400", 

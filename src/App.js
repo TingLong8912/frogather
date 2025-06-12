@@ -1,10 +1,11 @@
 import './App.css';
+import React from 'react';
 import { Layout } from 'antd';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Navbar } from './containers/Navbar';
-import { IndexPage, Problem, Game, Search, Result, RecordPage, ContactPage, FoundationPage } from './containers/Sences';
-import { ThirdwebProvider } from "@thirdweb-dev/react";
-import { metamaskWallet } from "@thirdweb-dev/react";
+import { IndexPage, RecordPage, ContactPage } from './containers/Sences';
+// import { ThirdwebProvider } from "@thirdweb-dev/react";
+// import { metamaskWallet } from "@thirdweb-dev/react";
 
 const { Content } = Layout;
 const contentStyle = {
@@ -19,9 +20,9 @@ const searchContentStyle = {
 };
 
 function App() {
-  const metamaskConfig = metamaskWallet();
+  // const metamaskConfig = metamaskWallet();
   return (
-    <ThirdwebProvider activeChain={"goerli"} supportedWallets={[metamaskWallet()]}>
+    // <ThirdwebProvider activeChain={"goerli"} supportedWallets={[metamaskWallet()]}>
       <div className="App">
         <Layout>
           <BrowserRouter>
@@ -29,19 +30,19 @@ function App() {
             <Content style={contentStyle}>
               <Routes>
                 <Route path="/" element={<IndexPage />} />
-                <Route path="/game" element={<Game />} />
+                {/* <Route path="/game" element={<Game />} />
                 <Route path="/problem" element={<Problem />} />
                 <Route path="/search" element={<Search />} />
-                <Route path="/result" element={<Result />} />
+                <Route path="/result" element={<Result />} /> */}
                 <Route path="/record" element={<RecordPage />} />
                 <Route path="/contact" element={<ContactPage />} />
-                <Route path="/foundation" element={<FoundationPage />} />
+                {/* <Route path="/foundation" element={<FoundationPage />} /> */}
               </Routes>
             </Content>
           </BrowserRouter>
         </Layout>
       </div>
-    </ThirdwebProvider>
+    // </ThirdwebProvider>
   );
 }
 
