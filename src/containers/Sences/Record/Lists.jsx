@@ -67,7 +67,7 @@ const Lists = () => {
   const getData = async () => {
     const data = await getRecords(isAsc);
     setIsAsc((isAsc === 1) ? -1: 1);
-    setRecords(data);
+    setRecords(Array.isArray(data) ? data : []);
   };
   
   useEffect(() => {
@@ -76,6 +76,7 @@ const Lists = () => {
 
   /* UPDATE RECORD COORDS */
   useEffect(() => {
+    if (!Array.isArray(records)) return;
     const coords = records.map(({ _id, species, hashtag, coords }) => {
       return {
         id: _id,
