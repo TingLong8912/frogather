@@ -1,17 +1,15 @@
-import { instance } from "./../connection";
+import axios from "axios";
 
 export const getReverseGeocoding = async (lat, lon) => {
-  const { data: { location } } = await instance.get('/api/getReverseGeocoding',
-    {
-      params: 
-      { 
-        lat: lat,
-        lon: lon, 
-      } 
-    }
-  );
+  if (lat === undefined || lon === undefined) return [];
+  const res = await axios({
+    method: 'get',
+    url: 'https://nominatim.openstreetmap.org/reverse?format=jsonv2&' +
+      `lat=${lat}&` +
+      `lon=${lon}`,
+  });
+  const location = res.data;
   const place_name = location["display_name"];
   const place_name_list = place_name?.split(", ");
-  //console.log(place_name_list);
-  return place_name_list
-} 
+  return place_name_list;
+};
