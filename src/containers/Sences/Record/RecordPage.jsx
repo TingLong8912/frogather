@@ -2,7 +2,7 @@ import { Col, Row } from 'antd';
 import { Lists } from './Lists';
 import { MapContainer } from './MapContainer';
 import './css/RecordPage.css';
-import MapContext from 'hook/MapContext';
+import { MapContext } from './MapContext';
 import React, { useRef, useState, useEffect } from "react";
 import { fromLonLat } from "ol/proj";
 
@@ -28,9 +28,6 @@ const RecordPage = () => {
   const [ userCoord, setUserCoord ] = useState([]);
   const [ recordCoords, setRecordCoords ] = useState([]);
 
-  //const { stepsAndGeoJSON, showSteps, showAllFeactures } = useContext(MapContext);
-  //const [ loading1, setloading1 ] = useState(false)
-	//const { showSteps, setAllFeactures, setDisplayMap } = useContext(HomePageContext);
   var map_width = (mapView) ? 24 : 12;
 
   useEffect(() => {
