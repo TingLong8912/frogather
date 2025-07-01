@@ -79,6 +79,7 @@ const Lists = () => {
 
   /* UPDATE RECORD COORDS */
   useEffect(() => {
+    console.log("RECORDS", records);
     const coords = records.map(({ _id, species, hashtag, coords }) => {
       return {
         id: _id,
