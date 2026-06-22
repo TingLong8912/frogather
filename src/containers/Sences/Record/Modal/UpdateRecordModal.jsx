@@ -77,11 +77,11 @@ const UpdateRecordModal = ({ isUpdateRecordModalOpen, setIsUpdateRecordModalOpen
       fetchData();
       form.setFieldValue("placeCoord", lat_and_lon);
     }
-	}, [userCoord]);
+	}, [userCoord, form]);
 
 
   useEffect(() => {
-    if (userPlaceName) {
+    if (userPlaceName && userCoord) {
       var lat_and_lon = toLonLat(userCoord);
       lat_and_lon = Math.round(lat_and_lon[0]*100)/100 + ", " + Math.round(lat_and_lon[1]*100)/100;
       const options = userPlaceName.map((place, index)=>{
@@ -95,7 +95,7 @@ const UpdateRecordModal = ({ isUpdateRecordModalOpen, setIsUpdateRecordModalOpen
         setLocationOptions([options[0], options[1], options[2]]); 
       }
     }
-  }, [userPlaceName]);
+  }, [userPlaceName, userCoord]);
 
   useEffect(() => {
     if (recordType === "public") {
@@ -103,7 +103,7 @@ const UpdateRecordModal = ({ isUpdateRecordModalOpen, setIsUpdateRecordModalOpen
     } else {
       form.setFieldValue("isAuthPulic", false);
     }
-  }, [recordType]);
+  }, [recordType, form]);
   
   /* HANDLE MODAL */
   const handleCancel = () => {
@@ -172,7 +172,7 @@ const UpdateRecordModal = ({ isUpdateRecordModalOpen, setIsUpdateRecordModalOpen
 
   useEffect(() => {
     form.setFieldValue("hashtag", hashtagTypes);
-  }, [hashtagTypes]);
+  }, [hashtagTypes, form]);
 
   /* HANDLE FORM SUMBIT */
   const onFinish = async (values) => {

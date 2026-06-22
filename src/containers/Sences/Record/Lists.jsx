@@ -17,33 +17,33 @@ const CustomizedLists = styled(List)`
   padding-top: 35px;
 `;
 
-const options = [
-  {
-    key: '1',
-    label: '全部',
-    value: "all",
-  },
-  {
-    key: '2',
-    label: '蛙調',
-    value: "frogSurvey",
-  },
-  {
-    key: '3',
-    label: '待移除',
-    value: "remove",
-  },
-  {
-    key: '4',
-    label: '已移除',
-    value: "removed",
-  },
-  {
-    key: '5',
-    label: '詢問',
-    value: "question",
-  }
-]
+// const options = [
+//   {
+//     key: '1',
+//     label: '全部',
+//     value: "all",
+//   },
+//   {
+//     key: '2',
+//     label: '蛙調',
+//     value: "frogSurvey",
+//   },
+//   {
+//     key: '3',
+//     label: '待移除',
+//     value: "remove",
+//   },
+//   {
+//     key: '4',
+//     label: '已移除',
+//     value: "removed",
+//   },
+//   {
+//     key: '5',
+//     label: '詢問',
+//     value: "question",
+//   }
+// ]
 
 const Lists = () => {
   const [ isAsc, setIsAsc ] = useState(-1);
@@ -62,16 +62,15 @@ const Lists = () => {
   };
 
   /* GET RECORD WHEN REFRESHING */
-  const getData = async () => {
-    const data = await getRecords(isAsc);
-    setIsAsc((isAsc === 1) ? -1: 1);
-    const filteredData = Array.isArray(data)
-      ? data.filter(r => r.coords && Array.isArray(r.coords.coordinates))
-      : [];
-    setRecords(filteredData);
-  };
-  
   useEffect(() => {
+    const getData = async () => {
+      const data = await getRecords(-1);
+      setIsAsc(1);
+      const filteredData = Array.isArray(data)
+        ? data.filter(r => r.coords && Array.isArray(r.coords.coordinates))
+        : [];
+      setRecords(filteredData);
+    };
     getData();
   }, []);
 
@@ -87,7 +86,7 @@ const Lists = () => {
       };
     });
     setRecordCoords(coords);
-  }, [records]);
+  }, [records, setRecordCoords]);
 
   const handleSort = async () => {
     const data = await getRecords(isAsc);

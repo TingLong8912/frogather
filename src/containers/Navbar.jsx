@@ -7,7 +7,6 @@ import { BsPersonFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import styled from 'styled-components';
 const { Header } = Layout;
-const { SubMenu } = Menu;
 
 const CustomizedHeader = styled(Header)`
   position: absolute;
@@ -73,12 +72,6 @@ const navItemsStyle = {
   backgroundColor: "#ffffff70",
   backdropFilter: "blur(5px)",
   borderRadius: "50%",
-}
-const subitemsStyle = {
-  height: "30px",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
 }
 const menuStyle = {
   height: "40px",

@@ -8,9 +8,9 @@ function ExtractImageName(address) {
 
 function Section({ title, subtilte, desc, bulletin, imageset }) {
   let path;
-  if (imageset == 1) {
+  if (imageset === 1) {
     path = ["1.jpg", "4.jpg", "9.jpg", "6.jpg"];
-  } else if (imageset == 2) {
+  } else if (imageset === 2) {
     path = ["0.jpg", "7.jpg", "2.jpg", "8.jpg"];
   } else {
     path = ["3.jpg", "10.jpg", "5.jpg", "11.jpg"];
@@ -65,22 +65,22 @@ function Section({ title, subtilte, desc, bulletin, imageset }) {
         </p>
       </div>
       <div className="SectionBulletin 1" style={{ top: "70%" }}>
-        <a id="1" href="">
+        <span id="1">
           <i className={bulletin.icon[0]} aria-hidden="true"></i>
           {bulletin.event[0]}
-        </a>
+        </span>
       </div>
       <div className="SectionBulletin 2" style={{ top: "76%" }}>
-        <a id="2" href="">
+        <span id="2">
           <i className={bulletin.icon[1]} aria-hidden="true"></i>
           {bulletin.event[1]}
-        </a>
+        </span>
       </div>
       <div className="SectionBulletin 3" style={{ top: "82%" }}>
-        <a id="3" href="">
+        <span id="3">
           <i className={bulletin.icon[2]} aria-hidden="true"></i>
           {bulletin.event[2]}
-        </a>
+        </span>
       </div>
     </>
   );
