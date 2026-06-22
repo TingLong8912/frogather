@@ -1,19 +1,19 @@
-import React, { useContext, useEffect, useState } from "react";
 import { Button, Tooltip } from 'antd';
-import styled from 'styled-components';
-import { fromLonLat, toLonLat } from "ol/proj";
-import { Map } from "components/Map/Map";
-import { Layers, MapBoxLayer, VectorLayer, DrawVectorLayer, RecordVectorLayer } from "components/Layers";
-import Geolocation from 'ol/Geolocation.js';
-import Feature from "ol/Feature";
-import Point from "ol/geom/Point";
-import { Icon, Circle as CircleStyle, Style, Fill, Stroke } from "ol/style";
-import GeoJSON from "ol/format/GeoJSON";
-import { vector } from "components/Sources";
-import PinRed from 'assets/pin_red.svg';
 import PinGreen from 'assets/pin_green.svg';
+import PinRed from 'assets/pin_red.svg';
+import { DrawVectorLayer, Layers, MapBoxLayer, RecordVectorLayer, VectorLayer } from "components/Layers";
+import { Map } from "components/Map/Map";
+import { vector } from "components/Sources";
 import MapContext from "hook/MapContext";
+import Feature from "ol/Feature";
+import GeoJSON from "ol/format/GeoJSON";
+import Geolocation from 'ol/Geolocation.js';
+import Point from "ol/geom/Point";
+import { fromLonLat, toLonLat } from "ol/proj";
+import { Circle as CircleStyle, Fill, Icon, Stroke, Style } from "ol/style";
+import { useContext, useState } from "react";
 import { TbLayersOff, TbLayersSubtract } from "react-icons/tb";
+import styled from 'styled-components';
 
 const ViewButton = styled(Button)`
   position: absolute;
@@ -158,4 +158,4 @@ const MapContainer = ({mapView, setMapView}) => {
   );
 };
 
-export { MapContainer }
+export { MapContainer };

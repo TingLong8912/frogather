@@ -1,9 +1,9 @@
-import { useEffect, useContext, useCallback } from "react";
+import PinGreen from 'assets/pin_green.svg';
+import PinRed from 'assets/pin_red.svg';
 import MapContext from "hook/MapContext";
 import * as ol from "ol";
 import { Icon, Style } from "ol/style";
-import PinRed from 'assets/pin_red.svg';
-import PinGreen from 'assets/pin_green.svg';
+import { useCallback, useContext, useEffect } from "react";
 
 const selectStyle = new Style({
 	image: new Icon({

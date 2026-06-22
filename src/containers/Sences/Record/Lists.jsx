@@ -1,16 +1,14 @@
-import { List, message } from 'antd';
-import styled from 'styled-components';
-import { ListItems } from 'components/ListItems';
-import { useEffect, useState, useContext } from 'react';
-import { getRecords } from './../../../axios';
-import { Select, Button, Tooltip } from 'antd';
-import { UpdateRecordModal } from 'containers/Sences/Record/Modal';
-import { IoAddOutline } from 'react-icons/io5';
-import { HiSortDescending } from 'react-icons/hi';
-import { tagRender } from 'components/Tags';
-import { ActionButton } from 'components/ActionButton';
-import MapContext from "hook/MapContext";
 import { useAuth0 } from '@auth0/auth0-react';
+import { Button, List, message, Tooltip } from 'antd';
+import { ActionButton } from 'components/ActionButton';
+import { ListItems } from 'components/ListItems';
+import { UpdateRecordModal } from 'containers/Sences/Record/Modal';
+import MapContext from "hook/MapContext";
+import { useContext, useEffect, useState } from 'react';
+import { HiSortDescending } from 'react-icons/hi';
+import { IoAddOutline } from 'react-icons/io5';
+import styled from 'styled-components';
+import { getRecords } from './../../../axios';
 
 const CustomizedLists = styled(List)`
   border: none;
@@ -148,4 +146,4 @@ const Lists = () => {
   );
 };
 
-export { Lists }
+export { Lists };

@@ -1,16 +1,15 @@
-import { Modal, Button, Form, Input, message, AutoComplete, Pagination } from 'antd';
-import { EnvironmentFilled, PushpinFilled, GlobalOutlined, ExceptionOutlined } from '@ant-design/icons';
-import { FiMap, FiMinusCircle, FiAlertTriangle, FiCrosshair, FiHash } from "react-icons/fi";
-import { useState, useContext, useEffect } from 'react';
-import MapContext from 'hook/MapContext';
+import { EnvironmentFilled, ExceptionOutlined, GlobalOutlined, PushpinFilled } from '@ant-design/icons';
+import { useAuth0 } from '@auth0/auth0-react';
+import { AutoComplete, Button, Form, Input, message, Modal, Pagination } from 'antd';
 import Frog from "assets/frog.json";
 import Spot from "assets/scenic_spot_C_f.json";
-import { getReverseGeocoding, createRecord } from '../../../../axios';
-import { toLonLat } from 'ol/proj';
-import styled from 'styled-components';
-import { ImageUpload } from 'components/ImageUpload';
 import { OptionCard } from 'components/OptionCard';
-import { useAuth0 } from '@auth0/auth0-react';
+import MapContext from 'hook/MapContext';
+import { toLonLat } from 'ol/proj';
+import { useContext, useEffect, useState } from 'react';
+import { FiAlertTriangle, FiCrosshair, FiHash, FiMap, FiMinusCircle } from "react-icons/fi";
+import styled from 'styled-components';
+import { createRecord, getReverseGeocoding } from '../../../../axios';
 
 const coordTextStyle = {
   fontWeight: "400", 

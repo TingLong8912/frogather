@@ -1,10 +1,9 @@
-import React from "react";
+import Section from "./TopicSection";
+import info from "./info.json";
 import background from "./pic/Homepage - background.jpg";
 import frog1 from "./pic/frog1.png";
 import frog2 from "./pic/frog2.png";
 import frog3 from "./pic/frog3.png";
-import Section from "./TopicSection";
-import info from "./info.json";
 
 const img_style = {
   width: "100%",

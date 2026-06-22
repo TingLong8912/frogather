@@ -1,18 +1,18 @@
-import { Link } from "react-router-dom";
-import { Layout, Menu, Button, Dropdown } from 'antd';
-import styled from 'styled-components';
-import { BsPersonFill } from "react-icons/bs";
 import { useAuth0 } from "@auth0/auth0-react";
+import { Button, Dropdown, Layout, Menu } from 'antd';
 import LoginButton from 'components/LoginButton';
 import LogoutButton from 'components/LogoutButton';
 import { UserImg } from "components/UserImg";
+import { BsPersonFill } from "react-icons/bs";
+import { Link } from "react-router-dom";
+import styled from 'styled-components';
 const { Header } = Layout;
 const { SubMenu } = Menu;
 
 const CustomizedHeader = styled(Header)`
   position: absolute;
   top: 20px;
-  height: 30px;
+  height: 40px;
   width: 100%;
   padding-inline: 50px;
   line-height: 64px;
@@ -28,9 +28,18 @@ const CustomizedHeader = styled(Header)`
     font-size: small;
     font-weight: 700;
   }
-  & .ant-menu-item, .ant-menu-submenu-title{
+  & .ant-menu-item, & .ant-menu-submenu {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  & .ant-menu-submenu-title {
     display: flex;
     align-items: center;
+    justify-content: center;
+    width: 100%;
     height: 100%;
   }
 `;
@@ -45,11 +54,18 @@ const navTitleStyle = {
   fontSize: "large",
   backgroundColor: "#ffffff70",
   backdropFilter: "blur(5px)",
-  borderRadius: "15px",
+  borderRadius: "30px",
+  textDecoration: "none",
+  color: "black",
+  '&:hover': {
+    color: "rgba(0, 0, 0, 0.29)",
+    transitionDuration: "0.3s",
+  }
 }
 const navItemsStyle = {
-  width: "30px",
-  height: "30px",
+  width: "40px",
+  height: "40px",
+  flexShrink: 0,
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
@@ -59,27 +75,23 @@ const navItemsStyle = {
   borderRadius: "50%",
 }
 const subitemsStyle = {
-  width: "30px",
   height: "30px",
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
 }
 const menuStyle = {
-  height: "30px",
+  height: "40px",
   width: "100%",
   display: "flex",
   justifyContent: "space-around",
   backgroundColor: "#ffffff70",
   backdropFilter: "blur(5px)",
-  borderRadius: "15px",
+  borderRadius: "30px",
   paddingInline: "10px",
 }
 
-
-
 const navLabelItems = {
-  "": "主畫面",
   "educate": "教育",
   "record": "紀錄",
   "contact": "關於我們",
@@ -105,17 +117,12 @@ const educate = [
   }
 ];
 
-const navItems = ['', 'educate', 'record', 'contact', 'foundation'].map((key) => {
+const navItems = ['educate', 'record', 'contact', 'foundation'].map((key) => {
   if (key === 'educate') {
     return {
       key,
-      label: (
-        <SubMenu key={key} title={navLabelItems[key]} style={subitemsStyle}>
-          {educate.map(item => (
-            <Menu.Item key={item.key} >{item.label}</Menu.Item>
-          ))}
-        </SubMenu>
-      ),
+      label: navLabelItems[key],
+      children: educate,
     };
   }
   return {
@@ -145,9 +152,9 @@ const Navbar = () => {
 
   return (
     <CustomizedHeader theme="light">
-      <div style={navTitleStyle}>
+      <a href="/" style={navTitleStyle}>
         FroGather
-      </div>
+      </a>
       <div style={{display: "flex", width: "40%"}}>
         <Menu 
           theme="light" 
@@ -175,4 +182,4 @@ const Navbar = () => {
   )
 };
 
-export { Navbar }
+export { Navbar };

@@ -1,10 +1,10 @@
 import { Col, Row } from 'antd';
+import MapContext from 'hook/MapContext';
+import { fromLonLat } from "ol/proj";
+import { useEffect, useRef, useState } from "react";
 import { Lists } from './Lists';
 import { MapContainer } from './MapContainer';
 import './css/RecordPage.css';
-import MapContext from 'hook/MapContext';
-import React, { useRef, useState, useEffect } from "react";
-import { fromLonLat } from "ol/proj";
 
 const gridStyle = {
   borderTop: "10px solid #f5f5f5",
@@ -78,4 +78,4 @@ const RecordPage = () => {
   );
 };
 
-export { RecordPage }
+export { RecordPage };

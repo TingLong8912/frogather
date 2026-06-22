@@ -1,11 +1,11 @@
-import { Modal, Input, Image, Form, Collapse, message } from 'antd';
-import { useState, useRef } from 'react';
+import { useAuth0 } from '@auth0/auth0-react';
+import { Collapse, Form, Input, message, Modal } from 'antd';
+import { CommentItem } from 'components/CommentItem';
+import { UserImg } from 'components/UserImg';
+import { useRef, useState } from 'react';
 import Draggable from 'react-draggable';
 import styled from 'styled-components';
-import { CommentItem } from 'components/CommentItem';
-import { createRecordComments, addCommentLikes } from './../../../../axios';
-import { UserImg } from 'components/UserImg';
-import { useAuth0 } from '@auth0/auth0-react';
+import { addCommentLikes, createRecordComments } from './../../../../axios';
 
 const { Panel } = Collapse;
 
@@ -167,4 +167,4 @@ const CommentModal = ({ title, postId, context, isCommentModalOpen, setIsComment
   );
 };
 
-export { CommentModal }
+export { CommentModal };
